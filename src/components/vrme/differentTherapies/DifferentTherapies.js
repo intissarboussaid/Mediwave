@@ -39,8 +39,14 @@ const DifferentTherapies = (props) => {
       boxShadow: '1px 2px #888888',
     },
   }
-
-
+const [imgSol, setImgSol]=useState();
+const [title, setTitle]= useState();
+const [textSol, setTextSol]=useState();
+const [textSol1, setTextSol1]=useState();
+const [textSol2, setTextSol2]=useState();
+const [textSol3, setTextSol3]=useState();
+const [widthStyle, setWidthStyle] = useState('100%');
+const [left, setLeft] = useState();
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -51,35 +57,22 @@ const DifferentTherapies = (props) => {
   function closeModal1() {
     setIsOpen(false);
   }
-  const Card = ({ src, title, content, content1, content2, subName, SubImg,
-    subText1,
-    subText2,
-    subText3 }) => (
+  const Card = ({ src, title, content, content1, content2, button}) => (
     <div className='card'>
       <div>{src}</div>
       <h2>{title}</h2>
       <p>{content}</p>
       <p>{content1}</p>
       <p>{content2}</p>
-      <p>
-        <button
-          type="button"
-          className="btn btn-primary"
-          data-toggle="modal"
-          data-target="#exampleModalCenter"
-          style={{
-            marginTop: "2%",
-            alignItems: "end",
-            width: '40%',
-            right: '30%'
-          }}
-        >
-          {t('Buy_Now')}
-        </button>
-        {/* Modal */}
+      <p style={{
+        display: 'flex',
+ justifyContent: 'center',
+ alignItems: 'center',
+ marginLeft:left,
+ width:widthStyle}}>{button}</p>
+      
 
-
-      </p>
+     
 
     </div>
   );
@@ -91,171 +84,235 @@ const DifferentTherapies = (props) => {
     marginTop: '0%',
     marginLeft: '-5%'
   });
-  const [imgSolution, setImgSolution] = useState({
+  const [imgSolstyle, setImgSolstyle] = useState({
     width: '50%',
     height: '40%',
   });
   const data = [
     {
       id: 1,
-      imgUrl: <img src={claustrophobie} style={imageStyle1}></img>,
+      imgUrl: claustrophobie,
       text1: t("CLAUSTROPHOBIA_1"),
       text2: "",
       text3: t("CLAUSTROPHOBIA_2"),
       name: t("CLAUSTROPHOBIA"),
-    },
-    {
-      id: 3,
-      imgUrl: <img src={acrophobiee} style={imageStyle1}></img>,
-      text1: t("ACROPHOBIA_1"),
-      // ,
-      text2: t("ACROPHOBIA_2"),
-      // ,
-      text3: "  ",
-      name: t("AGORAPHOBIA"),
-    },
-    {
-      id: 5,
-      imgUrl: <img src={arachrophobie} style={imageStyle1}></img>,
-      text1: t("ARACHNOPHOBIA_1"),
-      text2: t("ARACHNOPHOBIA_2"),
-      text3: "  ",
-      name: t("ARACHNOPHOBIA"),
-    },
-    {
-      id: 7,
-      imgUrl: <img src={agora} style={imageStyle1}></img>,
-      text1: t("AGORAPHOBIA_1"),
-      // ,
-      text2: t("AGORAPHOBIA_2"),
-      //  
-      text3: "  ",
-      name: t("AGORAPHOBIA"),
-
-    },
-    {
-      id: 9,
-      imgUrl: <img src={social} style={imageStyle1}></img>,
-      text1: t("SOCIAL_PHOBIA_1"),
-      text2: t("SOCIAL_PHOBIA_2"),
-      text3: "  ",
-      name: t("SOCIAL_PHOBIA"),
-    },
-  ];
-
-  const data1 = [
-    {
-      id: 1,
-      imgUrl: <img src={claustrophobie} style={imageStyle1} />,
-      text1: t("CLAUSTROPHOBIA_1"),
-      text2: "",
-      text3: t("CLAUSTROPHOBIA_2"),
-      name: t("CLAUSTROPHOBIA"),
-      SubImg: <img src={assenseur} style={{ width: '20%' }} />,
+      button: <button
+      type="button"
+      className="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+      style={{
+        marginTop: "2%",
+        alignItems: "end",
+        width: '40%',
+        right: '30%'
+      }}
+      onClick={ () =>{
+                     setImgSol(assenseur);
+                     setTitle(t("soll"));  
+                     setTextSol((""));
+                     setTextSol1(t("APPLICATIONS_1"));                                     
+                     setTextSol2((""));
+                     setTextSol3((""));
+                     console.log('solutions :',imgSol )
+                    }  
+                             
+        }
+    >
+       {t("Learn")}
+    </button>,
+      imgSolution: assenseur,
       subText1: t("APPLICATIONS_1"),
       subText2: " ",
       subText3: "  ",
       SubName: t("soll"),
-      button: <button onClick={openModal1} >
-        <div className="center-button">
-          <a className="button-one">
-            {t("Our-Solution")}
-          </a>
-        </div>
-      </button>,
     },
     {
       id: 2,
-      imgUrl: <img src={acrophobiee} style={imageStyle1} />,
+      imgUrl: acrophobiee,
       text1: t("ACROPHOBIA_1"),
+      // ,
       text2: t("ACROPHOBIA_2"),
+      //  
       text3: "  ",
       name: t("AGORAPHOBIA"),
-      button: <button onClick={openModal1} >
-        <div className="center-button">
-          <a className="button-one">
-            {t("Our-Solution")}
-          </a>
-        </div>
-      </button>,
-      subImg: <img src={acrophobieSolution} style={{ width: '20%' }} />,
+      imgSolution: acrophobieSolution,
       subText1: t("APPLICATIONS_2"),
-      subText2: "  ",
+      subText2: "",
       subText3: "  ",
       subName: t("soll"),
-
+      button: <button
+      type="button"
+      className="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+      style={{
+        marginTop: "2%",
+        alignItems: "end",
+        width: '40%',
+        right: '30%'
+      }}
+      onClick={ () =>{
+                     setImgSol(acrophobieSolution);
+                     setTextSol((""));
+                     setTextSol1(t("APPLICATIONS_2"));
+                     setTextSol2((""));
+                     setTextSol3((""));
+                     setTitle(t("soll"));
+                     console.log('solutions :',imgSol )
+                    }  
+                             
+        }
+    >
+       {t("Learn")}
+    </button>,
 
     },
     {
       id: 3,
-      imgUrl: <img src={arachrophobie} style={imageStyle1} />,
+      imgUrl:arachrophobie,
       text1: t("ARACHNOPHOBIA_1"),
+      // ,
       text2: t("ARACHNOPHOBIA_2"),
+      // ,
       text3: "  ",
       name: t("ARACHNOPHOBIA"),
-      button: <button onClick={openModal1} >
-        <div className="center-button">
-          <a className="button-one">
-            {t("Our-Solution")}
-          </a>
-        </div>
-      </button>,
-      subImg: <img src={arachrophobieSolution} style={{ width: '20%' }} />,
+      imgSolution:arachrophobieSolution,
       subText1: t("APPLICATIONS_3"),
-      subText2: "",
+      subText2: "  ",
       subText3: "  ",
       subName: t("soll"),
-
-
+      button: <button
+      type="button"
+      className="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+      style={{
+        marginTop: "2%",
+        alignItems: "end",
+        width: '40%',
+        right: '30%'
+      }}
+      onClick={ () =>{
+                     setImgSol(arachrophobieSolution);
+                     setTextSol(t(""));
+                     setTextSol1(t("APPLICATIONS_3"));
+                     setTextSol2(t(""))
+                     setTextSol3(t(""))
+                     setTitle(t("soll"));
+                     console.log('solutions :',imgSol )
+                    }                              
+        }
+    >
+      {t("Learn")}
+    </button>,
     },
     {
       id: 4,
-      imgUrl: <img src={agora} style={imageStyle1} />,
+      imgUrl:agora,
       text1: t("AGORAPHOBIA_1"),
       text2: t("AGORAPHOBIA_2"),
       text3: "  ",
       name: t("AGORAPHOBIA"),
-      button: <button onClick={openModal1} >
-        <div className="center-button">
-          <a className="button-one">
-            {t("Our-Solution")}
-          </a>
-        </div>
-      </button>,
-
-      subImg: <img src={agoraSol} style={{ width: '20%' }} />,
+      imgSolution: agoraSol,
       subText1: t("APPLICATIONS_4_1"),
       subText2: t("APPLICATIONS_4_2"),
       subText3: "  ",
       subName: t("soll"),
+      button: <button
+      type="button"
+      className="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+      style={{
+        marginTop: "2%",
+        alignItems: "end",
+        width: '40%',
+        right: '30%'
+      }}
+      onClick={ () =>{
+                     setImgSol(agoraSol);
 
-
+                     setTextSol(t("APPLICATIONS_4_1"));  
+                     setTextSol1((""));                    
+                     setTextSol2(t("APPLICATIONS_4_2"));
+                     setTextSol3(("")); 
+                     setTitle(t("soll"));
+                     console.log('solutions :',imgSol )
+                    }  
+                             
+        }
+    >
+      {t("Learn")}
+    </button>,
     },
+   
     {
       id: 5,
-      imgUrl: <img src={social} style={imageStyle1} />,
+      imgUrl: social,
       text1: t("SOCIAL_PHOBIA_1"),
       text2: t("SOCIAL_PHOBIA_2"),
       text3: "  ",
       name: t("SOCIAL_PHOBIA"),
-      button: <button onClick={openModal1} >
-        <div className="center-button">
-          <a className="button-one">
-            {t("Our-Solution")}
-          </a>
-        </div>
-      </button>,
-      subImg: <img src={glossophobie} style={{ width: '20%' }} />,
+      imgSolution: glossophobie,
       subText1: t('SOCIAL_PHOBIA_Soll_1'),
       subText2: t('SOCIAL_PHOBIA_Soll_2'),
       subText3: t('SOCIAL_PHOBIA_Soll_3'),
 
+      button: <button
+      type="button"
+      className="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+      style={{
+        marginTop: "2%",
+        alignItems: "end",
+        width: '40%',
+        right: '30%'
+      }}
+      onClick={ () =>{
+                     setImgSol(glossophobie);
+                     setTitle(t("soll"));
+                     setTextSol(t('SOCIAL_PHOBIA_Soll')); 
+                     setTextSol1(t('SOCIAL_PHOBIA_Soll_1'));
+                     setTextSol2(t('SOCIAL_PHOBIA_Soll_2'));
+                     setTextSol3(t('SOCIAL_PHOBIA_Soll_3'));
+                     console.log('solutions :',imgSol )
+                    }                              
+        }
+    >
+      {t("Learn")}
+    </button>,
 
     },
   ];
 
 
-  return (
+  useEffect(() => {
+
+  if(windowDimensions.width > 450 ){
+    setWidthStyle('100%');
+    setLeft();
+  }
+  if(windowDimensions.width <= 450 && windowDimensions.width < 410  ){
+    setWidthStyle('300px');
+    setLeft('0px');
+  }
+  if(windowDimensions.width<= 410 && windowDimensions.width>400  ){
+    setWidthStyle('300px');
+    setLeft('-25px');
+  }
+  if(windowDimensions.width<=400 && windowDimensions.width > 350){
+    setWidthStyle('300px');
+    setLeft('-40px');
+  }
+  if(windowDimensions.width<= 350){
+    setWidthStyle('300px');
+    setLeft('-90px');
+  }
+  }, [windowDimensions.width,]);
+
+ return (
     <>
       <div
         className="container-fluid"
@@ -283,80 +340,56 @@ const DifferentTherapies = (props) => {
                 {data.map((i) => (
                   <div key={i.id}>
                     <Card
-                      src={i.imgUrl}
+                      src={ <img src={i.imgUrl} style={imageStyle1}/>}
                       title={i.name}
                       content={i.text1}
                       content1={i.text2}
-                      content2={i.text3}
-
-                     
-
-                    />
-   
-                  </div>
-
-                ))}
-
-             
+                      content2={i.text3}  
+                      button={i.button}                
+                    />,
+        </div>
+                        ))}
               </Carousell>
-
-
             </div>
           </div>
         </section>
-        {data.map((item) => (
-        <div
-                  className="modal fade"
-                  id="exampleModalCenter"
-                  key={item.id}
-                  tabIndex="-1"
-                  role="dialog"
-                  aria-labelledby="exampleModalCenterTitle"
-                  aria-hidden="true"
-                >
-                  <div className="modal-dialog modal-dialog-centered" role="document">
-                    <div className="modal-content">
-                      <div className="modal-header">
-                        <button
-                          type="button"
-                          className="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h5 className="modal-title" id="exampleModalLongTitle">
-                        {item.SubImg}
-                    
-                        </h5>
-                        <p>{item.subName}</p>
-                      </div>
-                      <section className="contact-section">
-                        <div className="contact-box">
-                          <div className="row" style={{ marginLeft: "2%", marginRight: "2%" }}>
-                            <div className="col-md-12 col-sm-8">
-                         
-                      {item.subText1}
-                     {item.subText2}
-                     {item.subText3}
-                            </div>
+        <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+                      <div className="modal-dialog modal-dialog-centered" role="document">
+                        <div className="modal-content">
+                          <div className="modal-header">
+                            <button
+                              type="button"
+                              className="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h2 style={{textAlign:'center'}}> {title}</h2>
+                            <h5 className="modal-title" id="exampleModalLongTitle" >
+                            <img src={imgSol} style={{width:'70%', marginLeft:'15%'}}/>
+                            </h5>
                           </div>
+                          <section className="contact-section">
+                            <div className="contact-box">
+                              <div className="row" style={{ marginLeft: "2%", marginRight: "2%" }}>
+                              
+                                <div className="col-md-12 col-sm-8" style={{marginTop:'-12%',display: 'flex',justifyContent: 'center', alignItems: 'center'}}>                                
+                                <a style={{ fontSize: '16px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> {textSol}</a>
+                                </div>
+                                <div className="col-md-12 col-sm-8" style={{marginTop:'-10%',display: 'flex',justifyContent: 'center', alignItems: 'center'}}>  
+                                  {textSol1}
+                                  {textSol2}
+                                  {textSol3}
+                                  <div style={{marginTop:'20%'}}>  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
                         </div>
-                      </section>
+                      </div>
                     </div>
-                  </div>
-                </div>
-))}
-
-
       </div>
-
-
-
-
-
-
-
     </>
   );
 };

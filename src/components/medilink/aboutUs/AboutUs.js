@@ -51,7 +51,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 2100 && windowDimensions.width < 2200) {
+    } else if (windowDimensions.width > 2100 && windowDimensions.width <= 2200) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -73,7 +73,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    }  else if (windowDimensions.width > 2000 && windowDimensions.width < 2100) {
+    }  else if (windowDimensions.width > 2000 && windowDimensions.width <= 2100) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -95,7 +95,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1900 && windowDimensions.width < 2000) {
+    } else if (windowDimensions.width > 1900 && windowDimensions.width <= 2000) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -117,7 +117,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    }  else if (windowDimensions.width > 1800 && windowDimensions.width < 1900) {
+    }  else if (windowDimensions.width > 1800 && windowDimensions.width <= 1900) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -139,7 +139,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    }  else if (windowDimensions.width > 1700 && windowDimensions.width < 1800) {
+    }  else if (windowDimensions.width > 1700 && windowDimensions.width <= 1800) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -161,7 +161,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1600 && windowDimensions.width < 1700) {
+    } else if (windowDimensions.width > 1600 && windowDimensions.width <= 1700) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -183,7 +183,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    }  else if (windowDimensions.width > 1500 && windowDimensions.width < 1600) {
+    }  else if (windowDimensions.width > 1500 && windowDimensions.width <= 1600) {
         setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -227,7 +227,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    }  if ((windowDimensions.width > 1300 && windowDimensions.width < 1400)) {
+    }  if ((windowDimensions.width > 1300 && windowDimensions.width <= 1400)) {
         setTitleStyle({
             marginTop: "-10%",
             fontSize: '45px'
@@ -249,7 +249,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
+    } else if (windowDimensions.width > 1200 && windowDimensions.width <= 1300) {
         setTitleStyle({
             marginTop: "-10%",
             fontSize: '45px'
@@ -272,7 +272,7 @@ function AboutUs() {
             position:'relative'
         })
 
-      } else if (windowDimensions.width > 1100 && windowDimensions.width < 1200) {
+      } else if (windowDimensions.width > 1100 && windowDimensions.width <= 1200) {
         setTitleStyle({
             marginTop: "-10%",
             fontSize: '45px'
@@ -296,7 +296,7 @@ function AboutUs() {
         })
 
       } 
-     else if (windowDimensions.width > 1000 && windowDimensions.width < 1100) {
+     else if (windowDimensions.width > 1000 && windowDimensions.width <= 1100) {
         setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -371,7 +371,7 @@ function AboutUs() {
             position:'relative'
         })
       }
-       else if (windowDimensions.width > 700 && windowDimensions.width < 900) {
+       else if (windowDimensions.width > 700 && windowDimensions.width <= 900) {
         setTitleStyle({
             marginTop: "-11%",
             fontSize: '45px'
@@ -398,7 +398,7 @@ function AboutUs() {
             marginTop:'-15%', 
             position:'relative'
         })
-      } else if (windowDimensions.width > 500 && windowDimensions.width < 700) {
+      } else if (windowDimensions.width > 500 && windowDimensions.width <= 700) {
         setTitleStyle({
             marginTop: "-15%",
             fontSize: '35px'
