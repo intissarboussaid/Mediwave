@@ -1,6 +1,6 @@
 .contenttt {
   width: 200%;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +69,7 @@ button {
   border: unset;
 }
 .left {
-  transform:  translate(-850%) translatey(-50%); 
+  transform:  translate(-900%) translatey(-50%); 
   }
   
 .right {

@@ -2178,14 +2178,22 @@ section#blog-section.blog-page .blog-box iframe {
   color: #333333;
   border: 1px solid #999999;
 }
-
+.btn-modal{
+  color:#3498db;
+  border: 1px solid #3498db;
+}
+.btn-modal:hover{
+  color:white;
+  background: #3498db;
+  border:#3498db
+}
 /*-------------------------------------------------*/
 /* =  Footer
 /*-------------------------------------------------*/
 .footer {
   text-align: center;
   padding-top: 5px;
-  background: rgba(86, 86, 86, 0.3);
+ background: rgb(131, 131, 131);
   backdrop-filter: blur(10px);
 }
 .footerSteriwave {
@@ -2480,24 +2488,10 @@ footer  .barr {
 }
 
 @media (max-width: 767px) {
-  /* .navbar-nav > li > a {
-    padding: 5px 15px !important;
-    font-size: 13px;
+  .navbarsteriwave{
+    background:rgba(114, 192, 238, 0.8);
+  
   }
-  .navbar-nav > li > a:before {
-    display: none;
-  }
-  .navbar-brand {
-    padding-top: 28px;
-  }
-  .navbar-toggle {
-    margin-top: 18px;
-  }
-  .navbar-collapse {
-    max-height: 340px;
-    overflow-y: scroll;
-  } */
-
 /* navbar Mediwave */
 
   header .navbarMedi{
@@ -2538,9 +2532,11 @@ footer  .barr {
 
   header.active .navbarsteriwave{
     height: 80px;
+    
    }
    .navbarsteriwave .navbar-nav>li{
      padding: 5px 15px !important;
+  
      width: 100%;
      font-size: 13px;
      height: 50px !important;

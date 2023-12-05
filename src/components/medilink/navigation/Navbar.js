@@ -19,7 +19,7 @@ const Header = () => {
 
 
 
-
+const [left, setLeft]= useState('20%');
   const { width, height } = useResizeScreen();
   const [widthImage, setWidthImage] = useState(150);
   const [dropDown, setDropDown] = useState({
@@ -149,6 +149,24 @@ const Header = () => {
     width:'10px',
 })
 
+}if(width>1345){
+  setLeft('0%')
+}else if(width >= 1100 && width <= 1345){
+  setLeft('-5%')
+}
+else if(width <1100 && width >  1088){
+  setLeft('-8%')
+}
+else if(width <=1088 && width >  1080){
+  setLeft('-15%')
+}else if(width >= 997 && width <=1080 ){
+  setLeft('-17%')
+}else if(width < 997 && width >= 992  ){
+  setLeft('-20%')
+}else if(width <  992 && width >= 768 ){
+  setLeft('-33%')
+}else if(width <   768 ){
+  setLeft('20%')
 }
  
     console.log("i am");
@@ -218,7 +236,7 @@ const Header = () => {
                     </div >
                   </li>
                   {isDropdownVisible && (
-                      <div className="dropdown" style={{ marginLeft: '20%' }}>
+                      <div className="dropdown" style={{ marginLeft: left }}>
                         {languages.map(({ code, name, country_code }) => (
                           <div 
                             disabled={code === currentLanguageCode}

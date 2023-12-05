@@ -508,7 +508,7 @@ function DiscoverUs() {
 
                                 <div className="center-button">
                                     <a
-                                        href="/VRme#therapies-section"
+                                        href="www.vrme.mediwave.tn#therapies-section"
                                         className="button-one"
                                         style={ButtonLeftStyle}
                                     >
@@ -537,7 +537,7 @@ function DiscoverUs() {
                                 </motion.p>
                                 <div className="center-button">
                                     <a
-                                        href="/VRme#physiotherapies-section"
+                                        href="www.vrme.mediwave.tn#physiotherapies-section"
                                         className="button-one"
                                         style={buttonStyle}
                                     >
@@ -568,7 +568,7 @@ function DiscoverUs() {
                                 </motion.p>
                                 <div className="center-button">
                                     <a
-                                        href="Steriwave#DiscoverOurSolution"
+                                        href="www.steriwave.mediwave.tn#DiscoverOurSolution"
                                         className="button-one"
                                         style={ButtonLeftStyle}
                                     >
@@ -598,7 +598,7 @@ function DiscoverUs() {
                                 </motion.p>
                                 <div className="center-button">
                                     <a
-                                        href="/Medilink"
+                                        href="www.medilink.mediwave.tn"
                                         className="button-one"
                                         style={buttonStyle}
 

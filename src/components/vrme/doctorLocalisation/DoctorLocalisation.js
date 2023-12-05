@@ -20,11 +20,11 @@ const DoctorLocalisation = () => {
   const { t } = useTranslation();
   const { width, height } = useResizeScreen();
   const [styleLeft, setStyleLeft]=useState('0%');
-  //   const { data, loading, error } = useFetch("/medecins");
+  const [marginLeftAvatar, setMarginLeftAvatar]= useState('0%')
   const [loading, setLoading] = useState("");
   const [doctor, setDoctor] = useState({});
   const [mapAdjust, setMapAdjust] = useState(
-    "col-lg-6 col-md-7 col-sm-6 col-xs-12"
+    "col-lg-8 col-md-7 col-sm-6 col-xs-12"
   );
   const [showDoctor, setShowDoctor] = useState(false);
   const [cardHeight, setCardHeight] = useState(500)
@@ -50,7 +50,8 @@ const DoctorLocalisation = () => {
      setWidthShowDoctor('90%');
      setTopShowDoctor('20%')
      setCardHeight(500);
-     setLeftCard('-1%')
+     setLeftCard('-1%');
+     setMarginLeftAvatar('-50%');
    }
 
    else if (width < 1200 && width > 992 ) { 
@@ -82,7 +83,8 @@ const DoctorLocalisation = () => {
     setWidthShowDoctor('150%');
     setTopShowDoctor('38%');
     setCardHeight(500);
-    setLeftCard('20%')
+    setLeftCard('20%');
+    setMarginLeftAvatar('10%')
    
   }
  }, [width]);
@@ -101,7 +103,7 @@ const DoctorLocalisation = () => {
       name: "mohamed",
       phone1: "9812345",
       phone2: "9712345",
-      prename: "akremi",
+      prename: "",
       qualification_personnel: "qualification personnel du med",
       specialty: "Psychiatre",
       _id: "63ad4fe5923f9689646b0080",
@@ -229,19 +231,8 @@ const DoctorLocalisation = () => {
     <img
       alt="Card"
       src={doctorImage}
-      // width={100}
     />
   );
-  // const footer = (
-  //   <div className="flex flex-wrap justify-content-end gap-2">
-  //     <Button label="Save" icon="pi pi-check" />
-  //     <Button
-  //       label="Cancel"
-  //       icon="pi pi-times"
-  //       className="p-button-outlined p-button-secondary"
-  //     />
-  //   </div>
-  // );
   const [items, setItems] = useState(data);
   useEffect(() => {
     console.log(items);
@@ -274,20 +265,16 @@ const DoctorLocalisation = () => {
               <Card
                 title={t("All_Doctors")}
                 subTitle={t("Choose_a_Doctor")}
-                //   footer={footer}
-                //   header={header}
                 className="md:w-38rem"
                 style={{
                   height: cardHeight,
                   marginRight: "10%",
                   overflowY: "scroll",
-                  // overflow: "hidden",
                   marginLeft:leftCard,
                   width:'90%',
                   marginTop: "2%",
                 }}
               >
-                {/* <h2>All Doctors</h2>{" "} */}
                 <div>
                   <div
                     className="p-card-subtitle"
@@ -395,14 +382,13 @@ const DoctorLocalisation = () => {
                           >
                             <Avatar
                               icon="pi pi-user"
-                              // className="mr-2"
                               size="xlarge"
-                              style={{ marginRight: "10%" }}
+                              style={{ marginLeft: marginLeftAvatar }}
                             />
                             <h5 style={{ marginRight: "2%" }}>
                               {item.prename}
                             </h5>
-                            <h5>{item.name}</h5>
+                            <h5 >{item.name}</h5>
                           </div>
                         );
                       })}
@@ -415,101 +401,96 @@ const DoctorLocalisation = () => {
         
           <div className="col-lg-6 col-md-5 col-sm-5 col-xs-12">
           {selectedMap.map1 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`} style={{marginTop:'13%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: cardHeight,
                   width: "220%",
-                  marginTop: "35%",
+                  // marginTop: "35%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.72745080533784, 10.782006011443983&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
                 allowFullScreen
               ></iframe>
-              {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
+             
             </div>
           ) : selectedMap.map2 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`} style={{marginTop:'13%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: cardHeight,
                   width: "220%",
-                  marginTop: "35%",
+                  // marginTop: "35%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=35.82773884566303, 10.63877166558366&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
                 allowFullScreen
               ></iframe>
-              {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
             </div>
           ) : selectedMap.map3 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`} style={{marginTop:'13%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: cardHeight,
                   width: "220%",
-                  marginTop: "35%",
+                  // marginTop: "35%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=36.02739528911792, 10.516575958078903&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
                 allowFullScreen
               ></iframe>
-              {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
-            </div>
+              </div>
           ) : selectedMap.map4 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`} style={{marginTop:'13%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: cardHeight,
                   width: "220%",
-                  marginTop: "35%",
+                  // marginTop: "35%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.744994555298184, 10.762687401023049&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
                 allowFullScreen
               ></iframe>
-              {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
-            </div>
+               </div>
           ) : selectedMap.map5 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`} style={{marginTop:'13%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: cardHeight,
                   width: "220%",
-                  marginTop: "35%",
+                  // marginTop: "35%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=35.76690598514113, 10.84111483143234&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
                 allowFullScreen
               ></iframe>
-              {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
-            </div>
+               </div>
           ) : selectedMap.map6 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`} style={{marginTop:'13%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: cardHeight,
                   width: "220%",
-                  marginTop: "35%",
+                  // marginTop: "35%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.72745080533784, 10.78200601144398&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
                 allowFullScreen
               ></iframe>
-              {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
-            </div>
+             </div>
           ) : null}
 </div>
 {showDoctor ? (
@@ -525,7 +506,6 @@ const DoctorLocalisation = () => {
                     marginRight: "10%",
                     marginTop: "0%",
                     width:widthShowDoctor,
-                    // marginLeft:leftShowDoctor,
                   }}
                 >
                   <div
@@ -544,7 +524,6 @@ const DoctorLocalisation = () => {
                     >
                       <Avatar
                         icon="pi pi-envelope"
-                        // className="mr-2"
                         size="xlarge"
                         style={{ marginRight: "10%" }}
                       />
@@ -560,7 +539,6 @@ const DoctorLocalisation = () => {
                     >
                       <Avatar
                         icon="pi pi-home"
-                        // className="mr-2"
                         size="xlarge"
                         style={{ marginRight: "10%" }}
                       />
@@ -576,7 +554,6 @@ const DoctorLocalisation = () => {
                     >
                       <Avatar
                         icon="pi pi-phone"
-                        // className="mr-2"
                         size="xlarge"
                         style={{ marginRight: "10%" }}
                       />
@@ -592,7 +569,6 @@ const DoctorLocalisation = () => {
                     >
                       <Avatar
                         icon="pi pi-phone"
-                        // className="mr-2"
                         size="xlarge"
                         style={{ marginRight: "10%" }}
                       />

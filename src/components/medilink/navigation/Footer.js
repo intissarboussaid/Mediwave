@@ -6,6 +6,8 @@ const Footer = () => {
   const { t } = useTranslation();
   const [top, setTop] =useState('5%');
   const windowDimensions = useResizeScreen();
+  const [margintop, setMargintop]= useState("translateY(100%)");
+  const [translateY, setTranslateY]= useState('translateY(30%)')
   useEffect(() => {
 
     if (windowDimensions.width > 2200) {
@@ -57,7 +59,7 @@ const Footer = () => {
       <footer className="footerSteriwave ">
         <div className="container-fluid">
           <div className="row">
-            <div className="title-section col-md-3 col-sm-3" >
+            <div className="title-section col-md-3 col-sm-3" style={{transform:translateY}}>
               <div className="media-title">
                 <h1 style={{color:'white'}}>{t("f-m-t")}</h1>
               </div>
@@ -80,12 +82,12 @@ const Footer = () => {
               </ul>
             </div>
            
-            <div className="col-md-6 col-sm-6 col-md-offset-2 ">
+            <div className="col-md-6 col-sm-6 col-md-offset-2 " style={{transform:margintop}}>
               {/* <h1 style={{color:'white'}}>{t("f_1")}</h1> */}
               <p >{t("Scenarios")}</p>
             </div>
           </div>
-          <p className="copyright">Copyright © 2023 3dwave</p>
+          <p className="copyright" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Copyright © 2023 3dwave</p>
 
         </div>
 

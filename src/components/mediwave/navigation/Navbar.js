@@ -13,6 +13,7 @@ const Header = () => {
 
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [ccurrentLanguageCode, setCcurrentLanguageCode] = useState(cookies.get("i18next"));
+  const [left, setLeft]=useState('20%');
 
   const handleLanguageChange = (code) => {
     setCcurrentLanguageCode(cookies.get("i18next"));
@@ -80,15 +81,8 @@ const Header = () => {
         border: 'rgba(130, 188, 228, 0.9)',
         marginLeft: 'none',
       })
-    } else if (width > 1200) {
-      setWidthImage(150);
-      setStyleImage({ margin: "7%" });
-      setDropDown({
-        background: 'rgba(130, 188, 228, 0.9)',
-        border: 'rgba(130, 188, 228, 0.9)',
-        marginLeft: 'none',
-      })
-    } else if (width < 769 && width > 563) {
+      
+    }  else if (width < 769 && width > 563) {
       setWidthImage(90);
       setStyleImage({ top: "9%" });
       setDropDown({
@@ -139,6 +133,23 @@ const Header = () => {
         marginTop: '-5%',
         width: '10px',
       });
+
+    }
+    if(width>1345){
+      setLeft('20%')
+    }else if(width >= 1100 && width <= 1345){
+      setLeft('18%')
+    }
+    else if(width <1100 && width >  1080){
+      setLeft('14%')
+    }else if(width >= 992 && width <=1080 ){
+      setLeft('6%')
+    }else if(width < 992 && width >= 800  ){
+      setLeft('-9%')
+    }else if(width <  800 && width >= 768 ){
+      setLeft('-12%')
+    }else if(width <   768 ){
+      setLeft('20%')
     }
     console.log("i am");
     console.log(width);
@@ -185,7 +196,7 @@ const Header = () => {
                   </li>
                   <li>
                     <a
-                      href="/VRme"
+                      href="www.vrme.mediwave.tn"
                     >
                       VRme
                     </a>
@@ -193,7 +204,7 @@ const Header = () => {
                   </li>
                   <li>
                     <a
-                      href="/Medilink"
+                      href="www.medilink.mediwave.tn"
                     >
                       Medilink
                     </a>
@@ -201,7 +212,7 @@ const Header = () => {
                   </li>
                   <li>
                     <a
-                      href="/Steriwave">
+                      href="www.steriwave.mediwave.tn">
                       Steriwave
                     </a>
 
@@ -224,7 +235,7 @@ const Header = () => {
                     </div>          
                   </li>
                   {isDropdownVisible && (
-                      <div className="dropdown" style={{marginLeft:'20%'}}>
+                      <div className="dropdown" style={{marginLeft:left}}>
                         {languages.map(({ code, name, country_code }) => (
                           <div
                             disabled={code === currentLanguageCode}
@@ -242,30 +253,7 @@ const Header = () => {
                           </div>
                         ))}
                       </div>
-                    )}  
-                  {/* <div className="dropdown-menu" style={dropDown}   >
-                      <li>
-                        <a >
-                          {languages.map(({ code, name, country_code }) => (
-                            <tr
-                              disabled={code === currentLanguageCode}
-                              key={country_code}
-                              onClick={() => i18next.changeLanguage(code)}
-                              class="navItemStyle"
-                              style={{
-                                opacity: code === currentLanguageCode ? 0.3 : 1,
-                              }}
-                            >
-                              {country_code === "fr" ? <Ic_fr /> : <Ic_gb />}
-
-                            </tr>
-                          ))}
-                        </a>
-                      </li>
-                      <div>
-
-                      </div>
-                    </div> */}
+                    )} 
                 </ul>
               </div>
             </div>

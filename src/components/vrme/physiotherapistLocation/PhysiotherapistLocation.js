@@ -14,8 +14,9 @@ const PhysiotherapistLocalisation = () => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState("");
   const [physiotherapist, setPhysiotherapist] = useState({});
+  const [marginLeftAvatar, setMarginLeftAvatar]= useState('0%')
   const [mapAdjust, setMapAdjust] = useState(
-    "col-lg-6 col-md-7 col-sm-6 col-xs-12"
+    "col-lg-8 col-md-7 col-sm-6 col-xs-12"
   );
   const [showPhysiotherapist, setShowPhysiotherapist] = useState(false);
   const [selectedMap, setSelectedMap] = useState({
@@ -41,7 +42,7 @@ const PhysiotherapistLocalisation = () => {
       lng: 10.295197155062155,
       mail: "physio1@gmail.com",
       media: [],
-      name: "Chamseddine",
+      name: "",
       phone1: "+216 96385274 ",
       phone2: "+216 97123450",
       prename: "Hedi",
@@ -241,7 +242,8 @@ const PhysiotherapistLocalisation = () => {
   useEffect(() => {
     if (width > 1200) {
      setStyleLeft('0%');
-     setLeftCard('-1%')
+     setLeftCard('5%');
+     setMarginLeftAvatar('-50%')
    }
 
    else if (width < 1200 && width > 992 ) { 
@@ -267,6 +269,10 @@ const PhysiotherapistLocalisation = () => {
   if (width < 770  ) {
     setStyleHeight(520)
   }
+  if (width < 586  ) {
+    setMarginLeftAvatar('10%')
+  }
+  
  }, [width]);
 
 
@@ -280,7 +286,6 @@ const PhysiotherapistLocalisation = () => {
         <div className="container">
           <div className="title-section">
             <h1>{t("FindPhysiotherapist")}</h1>
-            {/* <p>Sed arcu. Cras consequat.</p> */}
           </div>
         </div>
         <div className="row">
@@ -303,7 +308,7 @@ const PhysiotherapistLocalisation = () => {
                 <div>
                   <div
                     className="p-card-subtitle"
-                    style={{ marginRight: "7%", marginLeft: "7%" }}
+                    style={{ marginRight: "7%", marginLeft: "15%" }}
                   >
                     <div className="card">
                       {data.map((item, i) => {
@@ -409,12 +414,12 @@ const PhysiotherapistLocalisation = () => {
                               icon="pi pi-user"
                               // className="mr-2"
                               size="xlarge"
-                              style={{ marginRight: "10%" }}
+                              style={{ marginLeft: marginLeftAvatar}}
                             />
-                            <h5 style={{ marginRight: "2%" }}>
+                            <h5 style={{ marginRight: "3%" }}>
                               {item.prename}
                             </h5>
-                            <h5>{item.name}</h5>
+                            <h5 >{item.name}</h5>
                           </div>
                         );
                       })}
@@ -425,13 +430,13 @@ const PhysiotherapistLocalisation = () => {
             </div>
           </div>
           {selectedMap.map1 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`} style={{marginTop:'5.5%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: 500,
                   width: "100%",
-                  marginTop: "12%",
+                  // marginTop: "12%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.72745080533784, 10.782006011443983&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
@@ -441,13 +446,13 @@ const PhysiotherapistLocalisation = () => {
               {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
             </div>
           ) : selectedMap.map2 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`}style={{marginTop:'5.5%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: 500,
                   width: "100%",
-                  marginTop: "16%",
+                  // marginTop: "16%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=35.82773884566303, 10.63877166558366&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
@@ -457,13 +462,13 @@ const PhysiotherapistLocalisation = () => {
               {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
             </div>
           ) : selectedMap.map3 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`} style={{marginTop:'5.5%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: 500,
                   width: "100%",
-                  marginTop: "16%",
+                  // marginTop: "16%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=36.02739528911792, 10.516575958078903&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
@@ -473,13 +478,13 @@ const PhysiotherapistLocalisation = () => {
               {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
             </div>
           ) : selectedMap.map4 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`} style={{marginTop:'5.5%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: 500,
                   width: "100%",
-                  marginTop: "16%",
+                  // marginTop: "16%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.744994555298184, 10.762687401023049&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
@@ -489,13 +494,13 @@ const PhysiotherapistLocalisation = () => {
               {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
             </div>
           ) : selectedMap.map5 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`} style={{marginTop:'5.5%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: 500,
                   width: "100%",
-                  marginTop: "16%",
+                  // marginTop: "16%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=35.76690598514113, 10.84111483143234&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
@@ -505,14 +510,14 @@ const PhysiotherapistLocalisation = () => {
               {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
             </div>
           ) : selectedMap.map6 ? (
-            <div className={`${mapAdjust}`}>
+            <div className={`${mapAdjust}`}style={{marginTop:'5.5%'}}>
               <iframe
                 className="sc_googlemap"
                 style={{
                   height: 500,
                   height: "400",
                   width: "100%",
-                  marginTop: "16%",
+                  // marginTop: "16%",
                   marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.72745080533784, 10.78200601144398&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"

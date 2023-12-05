@@ -181,9 +181,22 @@ a {
 .carousel__dots .dot .active {
     background: black;
 }
-
+@media (max-width: 1200px) {
+    .carousel__btn {
+        align-items: center;
+        background: 0;
+        border: 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(0%);    
+    
+    } 
+}
 @media (max-width: 1000px) {
-    .carousel__slide-list {
+    /* .carousel__slide-list {
         height: 70%;
         left: 58%;
         list-style-type: none;
@@ -202,16 +215,28 @@ a {
         position: relative;
         width: 80%;
         margin-left: 10%;
-    }
+    } */
 }
 
 @media (max-width: 800px) {
+    .carousel__btn {
+        align-items: center;
+        background: 0;
+        border: 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(30%);    
+    
+    }
     .carousel__btn--prev {
-        left: -2rem;
+        left: -4rem;
     }
 
     .carousel__btn--next {
-        right: -2rem;
+        right: -5rem;
     }
 }
 @media (max-width: 680px) {
@@ -237,7 +262,7 @@ a {
         justify-content: center;
         position: absolute;
         top: 50%;
-        transform: translateY(-65%);
+        transform: translateY(15%);
     
     
     }
@@ -284,7 +309,7 @@ a {
         justify-content: center;
         position: absolute;
         top: 50%;
-        transform: translateY(-65%);   
+        transform: translateY(5%);   
     }
     .carousel__container {
         height: 100%;
@@ -305,6 +330,18 @@ a {
     html {
         font-size: 8px;
     }
+    .carousel__btn {
+        align-items: center;
+        background: 0;
+        border: 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(5%);  
+    
+    }
     .carousel__slide-list {
         height: 70%;
         left: 50%;
@@ -315,6 +352,12 @@ a {
         transform: translateX(-50%);
         background: white;
         width: calc((6 + 1) * 30rem* 2);
+    }
+    .carousel__btn--prev {
+        left: 1rem;
+    }
+    .carousel__btn--next {
+        right: -80px;
     }
 }
 @media (max-width: 400px) {
@@ -339,7 +382,7 @@ a {
         justify-content: center;
         position: absolute;
         top: 50%;
-        transform: translateY(-65%);
+        transform: translateY(0%);
     
     
     }

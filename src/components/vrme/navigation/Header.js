@@ -16,7 +16,7 @@ const Header = () => {
     setCcurrentLanguageCode(cookies.get("i18next"));
     i18next.changeLanguage(code);
   }
-
+const [marginleft, setMarginleft]=useState('20%');
   const { width, height } = useResizeScreen();
   const [widthImage, setWidthImage] = useState(150);
   const [styleImage, setStyleImage] = useState({ margin: "7%" });
@@ -192,7 +192,22 @@ const Header = () => {
       setWidthImage(90);
       setStyleImage({ display: 'none' });
     }
-
+    if(width>1345){
+      setMarginleft('20%')
+    }else if(width >= 1100 && width <= 1345){
+      setMarginleft('15%')
+    }
+    else if(width <1100 && width >  1088){
+      setMarginleft('12%')
+    }else if(width >= 992 && width <=1088 ){
+      setMarginleft('5%')
+    }else if(width < 992 && width >= 800  ){
+      setMarginleft('-8%')
+    }else if(width <  800 && width >= 768 ){
+      setMarginleft('-13%')
+    }else if(width <   768 ){
+      setMarginleft('20%');
+    }
     console.log("i am");
     console.log(width);
     console.log(widthImage);
@@ -218,7 +233,7 @@ const Header = () => {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-br/and" href="/VRme">
+                <a className="navbar-br/and" href="www.vrme.mediwave.tn">
                   <img
                     src={vrme}
                     alt=""
@@ -295,28 +310,7 @@ const Header = () => {
                     >
                       Doctors
                     </a>
-                  </li>
-                  {/* <li
-                    onClick={() =>
-                      setActive({
-                        home: "",
-                        therapies: "",
-                        therapist: "active",
-                        pricing: "",
-                        doctors: "",
-                        blog: "",
-                        contact: "",
-                        physiotherapist: "",
-                      })
-                    }
-                  >
-                    <a
-                      href="#therapists-section"
-                      class={active.therapist + " " + "navItemStyle"}
-                    >
-                      {t("h_3")}
-                    </a>
-                  </li> */}
+                  </li>                 
                   <li
                     onClick={() =>
                       setActive({
@@ -433,7 +427,7 @@ const Header = () => {
                     </div>          
                   </li>
                   {isDropdownVisible && (
-                      <div className="dropdownVRME" style={{marginLeft:'20%'}}>
+                      <div className="dropdownVRME" style={{marginLeft:marginleft}}>
                         {languages.map(({ code, name, country_code }) => (
                           <div
                             disabled={code === currentLanguageCode}
@@ -445,7 +439,7 @@ const Header = () => {
                             className="dropdowsStyleVRME"
                             style={{
                               opacity: code === currentLanguageCode ? 0.3 : 1,
-                              marginLeft:'-220%'
+                             
                             }}
                           >
                             {country_code === "fr" ? <Ic_fr /> : <Ic_gb />}

@@ -153,19 +153,19 @@ const VideoHeader = () => {
     } else if (windowDimensions.width > 1900 && windowDimensions.width < 2000) {
       setHeight(window.innerHeight);
       setTitleStyle({
-        marginTop: "18%",
+        marginTop: "30%",
         left: "55%",
         fontSize: "27px",
         fontWeight: "18%",
       });
       setSubTitleStyle({
-        marginTop: "22%",
+        marginTop: "35%",
         marginLeft: "55%",
         fontSize: "18px",
         fontWeight: "10%",
       });
       setButtonStyle({
-        marginTop: "27%",
+        marginTop: "40%",
         marginLeft: "55%",
         fontSize: "13px",
         fontWeight: "600",

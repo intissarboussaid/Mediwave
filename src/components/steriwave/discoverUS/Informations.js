@@ -622,8 +622,7 @@ function Informations() {
                                     whileTap={{ scale: 0.8 }}
                                     style={teftText}
                                 >
-                                    {/* <div style={{fontSize:fontSizeP}}> */}
-                                          <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> {t("h_5")}</a> <br/> {t("steri-useText1")}<br />{t("steri-useText2")}
+                                          <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> STERIWAVE</a> <br/> {t("steri-useText1")}<br />{t("steri-useText2")}
                                            {/* </div> */}
                                 </motion.p>
 

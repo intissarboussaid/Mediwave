@@ -19,13 +19,14 @@ const Header = () => {
 
   const { width, height } = useResizeScreen();
   const [widthImage, setWidthImage] = useState(150);
+  const [marginTop, setMarginTop] = useState();
   const [dropDown, setDropDown] = useState({
     background: 'rgba(114, 192, 238, 0.8)',
     border: 'rgba(114, 192, 238, 0.8)',
     marginLeft: 'none',
   });
   const [left, setLeft] = useState();
-
+  const [marginleft, setMarginleft] = useState('20%');
   const [styleImage, setStyleImage] = useState({ margin: "7%" });
 
   const IconlanguageStyle = {
@@ -198,7 +199,22 @@ const Header = () => {
         marginTop: '-5%',
         width: '10px',
       })
-
+    } if(width>1345){
+      setMarginleft('0%')
+    }else if(width >= 1100 && width <= 1345){
+      setMarginleft('-5%')
+    }
+    else if(width <1100 && width >  1088){
+      setMarginleft('-10%')
+    }else if(width >= 992 && width <=1088 ){
+      setMarginleft('-20%')
+    }else if(width < 992 && width >= 800  ){
+      setMarginleft('-32%')
+    }else if(width <  800 && width >= 768 ){
+      setMarginleft('-35%')
+    }else if(width <   768 ){
+      setMarginleft('20%');
+      setMarginTop('-3%')
     }
 
     console.log("i am");
@@ -265,13 +281,13 @@ const Header = () => {
 
                   </li>
                   <li >
-                    <div className="titleDropdown"  style={{ cursor: 'pointer' }} onClick={() => setIsDropdownVisible(!isDropdownVisible)}>
+                    <div className="titleDropdown"  style={{ cursor: 'pointer', marginTop:marginTop }} onClick={() => setIsDropdownVisible(!isDropdownVisible)}>
                     {currentLanguageCode === "en" ? <Ic_gb /> : <Ic_fr />}  &#x2193;
 
                     </div>
                   </li>
                   {isDropdownVisible && (
-                      <div className="dropdown" style={{ marginLeft: '20%' }}>
+                      <div className="dropdown" style={{ marginLeft: marginleft }}>
                         {languages.map(({ code, name, country_code }) => (
                           <div
                             disabled={code === currentLanguageCode}
